@@ -1,0 +1,44 @@
+clc;
+clear all;
+close all;
+
+f=@(x) x*x-3;
+%a = input ;
+%b = input ;
+a=1;
+b=2;
+
+    if f(a)*f(b)>0
+fprintf('No roots exist in the given interval\n')
+return 
+    end
+
+   if f(a)==0
+fprintf('a is one of the root\n')
+return
+
+elseif f(b)==0
+fprintf('b is one of the root\n')
+return
+    end
+
+
+for i=1:6
+c=(a+b)/2;
+
+if f(a)*f(c)<0
+b=c
+else
+a=c
+end
+
+if abs(f(a))<1.0E-6
+return
+  end
+  
+  end
+  
+ fprintf('AnsRooT=%f iteration: %d\n',c,i)
+
+
+
