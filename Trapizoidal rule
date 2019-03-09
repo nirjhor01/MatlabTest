@@ -1,0 +1,13 @@
+ f = @(x) (x^3+1)
+ a = input('Lower limit : ');
+ b = input('Upper limit : ');
+ 
+ exact_ans = quad(f,a,b);
+ I = (b-a)/2*(f(a)+f(b));
+ I
+ error = (I-exact_ans)/I*100;
+ error
+ 
+
+
+
